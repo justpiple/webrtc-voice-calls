@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice Call P2P</title>
+
+  <meta name="theme-color" content="#4f46e5">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Voice Call P2P">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="description" content="Peer-to-peer voice calling application">
+
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="manifest" href="/manifest.json">
+
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+
+<body>
+  <div class="audio-overlay hidden" id="audioOverlay">
+    <div class="audio-overlay-content">
+      <div class="audio-icon">🔊</div>
+      <h2>Enable Audio</h2>
+      <p>To use voice calling features, you need to allow audio first.</p>
+      <button class="btn btn-primary" id="enableAudioBtn">
+        🎵 Enable Audio
+      </button>
+      <small class="audio-hint">Click the button above to allow audio playback</small>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="logo">📞</div>
+    <h1 class="subtitle">Voice Call P2P</h1>
+
+    <div class="user-id-section">
+      <span class="user-id-label">Your ID</span>
+      <div class="user-id" id="userId">...</div>
+      <div class="button-group">
+        <button class="copy-btn" id="copyBtn">
+          📋 Copy ID
+        </button>
+        <button class="copy-btn" id="ringtoneControlBtn">
+          🔇 Mute Ringtone
+        </button>
+        <button class="copy-btn" id="phoneBookBtn">
+          📞 Phone Book
+        </button>
+      </div>
+
+      <div class="input-group">
+        <label for="displayName">Display Name</label>
+        <input type="text" id="displayName" placeholder="Enter your name" maxlength="20">
+        <button class="copy-btn" id="saveNameBtn">
+          💾 Save Name
+        </button>
+      </div>
+    </div>
+
+    <div class="call-section">
+      <div class="input-group">
+        <label for="targetUserId">Friend ID</label>
+        <input type="text" id="targetUserId" placeholder="Enter 6 digit friend ID" maxlength="6" pattern="[0-9]{6}">
+        <small class="input-hint">Example: 123456</small>
+      </div>
+
+      <div class="button-group">
+        <button class="btn" id="callBtn">
+          📞 Call
+        </button>
+        <button class="btn btn-danger hidden" id="endCallBtn">
+          ❌ End Call
+        </button>
+      </div>
+    </div>
+
+    <div class="status hidden" id="status"></div>
+
+    <div class="call-controls" id="callControls">
+      <h3>Call Controls</h3>
+      <button class="btn btn-secondary" id="muteBtn">
+        <span class="audio-indicator unmuted" id="audioIndicator"></span>
+        <span id="muteText">Mute Microphone</span>
+      </button>
+    </div>
+
+    <!-- Incoming Call Modal -->
+    <div class="status incoming hidden" id="incomingCall">
+      <div class="incoming-call-header">
+        <span class="incoming-icon">📞</span>
+        <h3>Incoming Call</h3>
+      </div>
+      <p>From: <strong id="incomingFrom"></strong></p>
+      <div class="button-group">
+        <button class="btn btn-success" id="acceptCallBtn">
+          ✅ Accept
+        </button>
+        <button class="btn btn-danger" id="rejectCallBtn">
+          ❌ Decline
+        </button>
+        <button class="btn btn-secondary" id="ringtoneBtn">
+          🔇 Mute Ringtone
+        </button>
+      </div>
+    </div>
+
+    <div class="modal-overlay hidden" id="phoneBookModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>📞 Phone Book</h3>
+          <button class="modal-close" id="closePhoneBookBtn">×</button>
+        </div>
+        <div class="modal-body">
+          <div class="phone-book-list" id="phoneBookList">
+            <div class="empty-state">
+              <div class="empty-icon">📞</div>
+              <p>No contacts saved yet</p>
+              <small>Contacts will be automatically saved after making calls</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+
+</html>

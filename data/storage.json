@@ -1,0 +1,22 @@
+{
+  "users": {
+    "717960": {
+      "userId": "717960",
+      "socketId": "3-BmL6rLkU9vb3LoAAAN",
+      "displayName": "Jajang",
+      "isOnline": true,
+      "lastSeen": "2025-06-29T05:18:52.149Z",
+      "createdAt": "2025-06-29T05:18:52.149Z"
+    },
+    "883439": {
+      "userId": "883439",
+      "socketId": "-s-qIrPdkykKaypwAAAB",
+      "displayName": "User 883439",
+      "isOnline": true,
+      "lastSeen": "2025-06-29T05:18:26.107Z",
+      "createdAt": "2025-06-29T05:18:26.107Z"
+    }
+  },
+  "callHistory": [],
+  "lastUpdated": "2025-06-29T05:18:52.196Z"
+}

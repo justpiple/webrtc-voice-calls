@@ -1,0 +1,33 @@
+{
+  "name": "voice-call-p2p",
+  "version": "1.0.0",
+  "description": "WebRTC P2P Voice Call Application",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "ts-node src/server.ts",
+    "dev:watch": "nodemon --exec ts-node src/server.ts"
+  },
+  "keywords": [
+    "webrtc",
+    "voice-call",
+    "p2p",
+    "socket.io"
+  ],
+  "author": "Ben",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^5.1.0",
+    "@types/node": "^20.0.0",
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
+  }
+}

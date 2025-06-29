@@ -1,0 +1,52 @@
+{
+  "name": "Voice Call P2P",
+  "short_name": "VoiceCall",
+  "description": "Free Peer-to-peer voice calling application",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4f46e5",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "id",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["communication", "social"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Call",
+      "short_name": "Call",
+      "description": "Start a new call",
+      "url": "/?action=call",
+      "icons": [
+        {
+          "src": "/favicon.ico",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "permissions": ["notifications", "microphone", "background-sync"],
+  "background": {
+    "service_worker": "/sw.js",
+    "type": "module"
+  }
+}
