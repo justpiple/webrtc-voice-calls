@@ -34,7 +34,8 @@ app.post("/api/users/names", (req: Request, res: Response) => {
     const { userIds } = req.body;
 
     if (!Array.isArray(userIds)) {
-      return res.status(400).json({ error: "userIds must be an array" });
+      res.status(400).json({ error: "userIds must be an array" });
+      return;
     }
 
     const names: Record<string, string> = {};
